@@ -50,7 +50,6 @@ function decode(expr) {
 
     letterArr.forEach(letter => {
         let letterStr = '';
-        let morseSymbol = '';
 
         for (let i = 0; i < 10; i += 2) {
 
@@ -62,9 +61,7 @@ function decode(expr) {
                 break;
             }
 
-            morseSymbol = letter[i] + letter[i+1];
-
-            letterStr = letterStr + MORSE_SYMBOLS[morseSymbol];
+            letterStr = letterStr + MORSE_SYMBOLS[letter[i] + letter[i+1]];
         }
 
         if (letterStr) encodeArr.push(letterStr);
